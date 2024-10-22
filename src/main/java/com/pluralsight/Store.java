@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -75,11 +76,24 @@ public class Store {
     }
 
     public static void displayProducts(ArrayList<Product> inventory, ArrayList<Product> cart, Scanner scanner) {
-        // This method should display a list of products from the inventory,
-        // and prompt the user to add items to their cart. The method should
-        // prompt the user to enter the ID of the product they want to add to
-        // their cart. The method should
-        // add the selected product to the cart ArrayList.
+        System.out.println("Here are the products: ");
+        for (Product product : inventory) {
+            System.out.println(product);
+        }
+        System.out.println("Enter the sku of the product you want to add: ");
+        String sku = scanner.nextLine();
+
+        Product namedProduct = findProductById(sku, inventory);
+        if (namedProduct != null) {
+            cart.add(namedProduct);
+            System.out.println("Added product: " + namedProduct);
+
+
+        } else {
+            System.out.println("Product not found!");
+        }
+
+
     }
 
     public static void displayCart(ArrayList<Product> cart, Scanner scanner, double totalAmount) {
@@ -98,10 +112,7 @@ public class Store {
     }
 
     public static Product findProductById(String id, ArrayList<Product> inventory) {
-        // This method should search the inventory ArrayList for a product with
-        // the specified ID, and return the corresponding com.pluralsight.Product object. If
-        // no product with the specified ID is found, the method should return
-        // null.
+     
         return null;
     }
 }

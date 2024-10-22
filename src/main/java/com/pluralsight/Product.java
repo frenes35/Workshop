@@ -4,7 +4,6 @@ public class Product {
 
     private String name;
     private double price;
-    private String department;
     private String sku;
 
     public String getName() {
@@ -23,13 +22,6 @@ public class Product {
         this.price = price;
     }
 
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
 
     public String getSku() {
         return sku;
@@ -40,17 +32,19 @@ public class Product {
     }
 
 
-
-    public Product(String sku, String name, double price, String department) {
+    public Product(String sku, String name, double price) {
         this.sku = sku;
         this.name = name;
         this.price = price;
-        this.department = department;
+
     }
 
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", sku='" + sku + '\'' +
+                '}';
+    }
 }

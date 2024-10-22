@@ -112,7 +112,9 @@ public class Store {
     }
 
     public static Product findProductById(String id, ArrayList<Product> inventory) {
-     
+        for (Product product : inventory) {
+            if (product.getSku().equalsIgnoreCase(id)) {}
+        }
         return null;
     }
 }

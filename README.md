@@ -47,8 +47,8 @@ Follow these steps to get your application running within IntelliJ IDEA:
 
 ## Demo
 
-Include screenshots or GIFs that show your application in action. Use tools
-like [Giphy Capture](https://giphy.com/apps/giphycapture) to record a GIF of your application.
+![remove item screenshot.png](imgs%2Fremove%20item%20screenshot.png)
+![Add item sceenn shot.png](imgs%2FAdd%20item%20sceenn%20shot.png)
 
 ![Application Screenshot](path/to/your/screenshot.png)
 

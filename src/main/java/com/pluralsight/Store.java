@@ -97,23 +97,48 @@ public class Store {
     }
 
     public static void displayCart(ArrayList<Product> cart, Scanner scanner, double totalAmount) {
-        // This method should display the items in the cart ArrayList, along
-        // with the total cost of all items in the cart. The method should
-        // prompt the user to remove items from their cart by entering the ID
-        // of the product they want to remove. The method should update the cart ArrayList and totalAmount
-        // variable accordingly.
+
+        if (cart.isEmpty()) {
+            System.out.println("Your cart is currently empty.");
+            return;
+        }
+
+        System.out.println("Here are the items in your cart:");
+        totalAmount = 0.0;
+
+        for (Product product : cart) {
+            System.out.println(product);
+            totalAmount += product.getPrice();
+        }
+        System.out.println("Total Amount: " + totalAmount);
+
+        System.out.println("To proceed, please type 'checkout':");
+        String input = scanner.nextLine();
+
+
+        if (input.equalsIgnoreCase("checkout")) {
+            checkOut(cart, totalAmount);
+        } else if (!input.equalsIgnoreCase("back")) {
+            Product productToRemove = findProductById(input, cart);
+            if (productToRemove != null) {
+                cart.remove(productToRemove);
+                System.out.println(productToRemove.getName() + "has been removed from your cart");
+            } else {
+                System.out.println("This product is not in your cart.");
+            }
+
+        }
     }
 
     public static void checkOut(ArrayList<Product> cart, double totalAmount) {
-        // This method should calculate the total cost of all items in the cart,
-        // and display a summary of the purchase to the user. The method should
-        // prompt the user to confirm the purchase, and deduct the total cost
-        // from their account if they confirm.
+
     }
 
     public static Product findProductById(String id, ArrayList<Product> inventory) {
         for (Product product : inventory) {
-            if (product.getSku().equalsIgnoreCase(id)) {}
+            if (product.getSku().equalsIgnoreCase(id)) {
+                return product;
+            }
         }
         return null;
     }

@@ -112,25 +112,61 @@ public class Store {
         }
         System.out.println("Total Amount: " + totalAmount);
 
-        System.out.println("To proceed, please type 'checkout':");
+        System.out.println("To proceed, please type 'checkout' or enter the SKU of the product to remove:");
         String input = scanner.nextLine();
-
 
         if (input.equalsIgnoreCase("checkout")) {
             checkOut(cart, totalAmount);
-        } else if (!input.equalsIgnoreCase("back")) {
+        } else {
             Product productToRemove = findProductById(input, cart);
             if (productToRemove != null) {
                 cart.remove(productToRemove);
-                System.out.println(productToRemove.getName() + "has been removed from your cart");
+                System.out.println(productToRemove.getName() + " has been removed from your cart.");
             } else {
                 System.out.println("This product is not in your cart.");
             }
-
         }
     }
 
     public static void checkOut(ArrayList<Product> cart, double totalAmount) {
+        if (cart.isEmpty()) {
+            System.out.println("Your cart currently has no items.");
+            return;
+        }
+
+        totalAmount = 0.0;
+        for (Product product : cart) {
+            totalAmount += product.getPrice();
+        }
+
+        System.out.println("Shopping Summary");
+        System.out.println("---------------------------");
+
+        for (Product product : cart) {
+            System.out.println(product.getName() + " - " + product.getPrice());
+        }
+
+        System.out.println("Total Amount: " + totalAmount);
+
+        System.out.print("Do you confirm your purchase? (Yes/No): ");
+        Scanner scanner = new Scanner(System.in);
+        String confirmation = scanner.nextLine();
+
+        if (confirmation.equalsIgnoreCase("Yes")) {
+            System.out.print("Please enter the total amount paid: ");
+            double payment = scanner.nextDouble();
+
+            if (payment >= totalAmount) {
+                double change = payment - totalAmount;
+                System.out.println("Payment was successful! Change: " + change);
+                System.out.println("Your shopping has been completed.");
+                cart.clear();
+            } else {
+                System.out.println("Insufficient funds. Your shopping could not be completed.");
+            }
+        } else {
+            System.out.println("Your shopping has been canceled.");
+        }
 
     }
 

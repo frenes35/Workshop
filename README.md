@@ -1,17 +1,24 @@
 # Project Title
 
+Online Store
+
 ## Description of the Project
 
-Briefly describe what this Java console application does. Mention its purpose and who the intended users are. Explain the main functionality and what problems it aims to solve.
-
-![Class Diagram](path/to/your/class_diagram.png)
+This Java console application is an online store simulation that allows users to browse products, add them to a cart,
+and proceed to checkout.
+The intended users are customers looking for a straightforward shopping experience.
+The main functionality includes displaying products, managing a shopping cart, and facilitating the checkout process,
+aiming to simplify online shopping and enhance user satisfaction.
 
 ## User Stories
 
-List the user stories that guided the development of your application. Format these stories as: "As a [type of user], I want [some goal] so that [some reason]."
-
-- As a user, I want to be able to input my data, so that the application can process it accordingly.
-- As a user, I want to receive immediate feedback, so I can understand what to do next.
+- As a customer, I want to view all available products, so that I can easily pick the one I need.
+- As a customer, I want to add products to my cart, so that I can review my selections before purchase.
+- As a customer, I want to remove items from my cart if I decide not to purchase them, so that my cart reflects my
+  current choices.
+- As a customer, I want to receive confirmation messages for my actions, so that I know what has been done successfully.
+- As a customer, I want a simple navigation interface, so that I can quickly access different sections of the
+  application.
 
 ## Setup
 
@@ -19,7 +26,8 @@ Instructions on how to set up and run the project using IntelliJ IDEA.
 
 ### Prerequisites
 
-- IntelliJ IDEA: Ensure you have IntelliJ IDEA installed, which you can download from [here](https://www.jetbrains.com/idea/download/).
+- IntelliJ IDEA: Ensure you have IntelliJ IDEA installed, which you can download
+  from [here](https://www.jetbrains.com/idea/download/).
 - Java SDK: Make sure Java SDK is installed and configured in IntelliJ.
 
 ### Running the Application in IntelliJ
@@ -39,31 +47,24 @@ Follow these steps to get your application running within IntelliJ IDEA:
 
 ## Demo
 
-Include screenshots or GIFs that show your application in action. Use tools like [Giphy Capture](https://giphy.com/apps/giphycapture) to record a GIF of your application.
+Include screenshots or GIFs that show your application in action. Use tools
+like [Giphy Capture](https://giphy.com/apps/giphycapture) to record a GIF of your application.
 
 ![Application Screenshot](path/to/your/screenshot.png)
 
 ## Future Work
 
-Outline potential future enhancements or functionalities you might consider adding:
-
-- Additional feature to be developed.
-- Improvement of current functionalities.
+- Implement user authentication to allow customers to create accounts and save their carts.
+- Add a feature for applying discounts or promotions during checkout.
+- Enhance the search functionality to filter products by various criteria more effectively.
 
 ## Resources
 
-List resources such as tutorials, articles, or documentation that helped you during the project.
-
-- [Java Programming Tutorial](https://www.example.com)
-- [Effective Java](https://www.example.com)
+- https://yearup.brightspace.com/d2l/home/8605
 
 ## Team Members
-
-- yigit
+M.ENES YILMAZ 
 
 ## Thanks
 
-Express gratitude towards those who provided help, guidance, or resources:
-
-- Thank you to [Mentor's Name] for continuous support and guidance.
-- A special thanks to all teammates for their dedication and teamwork.
+- Thank you to Raymond for continuous support and guidance.
